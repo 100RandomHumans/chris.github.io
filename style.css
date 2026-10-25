@@ -1,0 +1,345 @@
+:root {
+    --bg: #ff00ff;
+    --paper: #ffffcc;
+    --ink: #000080;
+    --link: #0000ee;
+    --hot: #ff0066;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px)
+}
+
+@media (prefers-color-scheme:dark) {
+    :root:not([data-theme="light"]) {
+        --bg: #1a0033;
+        --paper: #000044;
+        --ink: #ffff66;
+        --link: #66ffff;
+        --hot: #ff66cc
+    }
+}
+
+:root[data-theme="dark"] {
+    --bg: #1a0033;
+    --paper: #000044;
+    --ink: #ffff66;
+    --link: #66ffff;
+    --hot: #ff66cc
+}
+
+html {
+    scroll-padding-top: env(safe-area-inset-top, 0px)
+}
+
+body {
+    margin: 0;
+    padding: 8px;
+    background-color: var(--bg);
+    background-image: radial-gradient(circle, #fff 1px, transparent 2px), linear-gradient(45deg, rgba(0, 255, 255, .4) 25%, transparent 25%, transparent 75%, rgba(0, 255, 255, .4) 75%);
+    background-size: 23px 23px, 40px 40px;
+    animation: drift 8s linear infinite;
+    color: var(--ink);
+    font: 15px/1.5 "Comic Sans MS", "Comic Neue", "Chalkboard SE", cursive, sans-serif;
+    cursor: crosshair
+}
+
+@keyframes drift {
+    to {
+        background-position: 23px 23px, 40px 40px
+    }
+}
+
+a {
+    color: var(--link)
+}
+
+#wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center
+}
+
+marquee {
+    display: block;
+    background: #000;
+    color: #0f0;
+    font: bold 16px "Courier New", monospace;
+    padding: 4px;
+    border: 3px ridge #0f0
+}
+
+h1 {
+    font: normal 44px/1.1 Impact, "Arial Black", sans-serif;
+    margin: 14px 0 4px;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, magenta);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: hue 3s linear infinite
+}
+
+@keyframes hue {
+    to {
+        filter: hue-rotate(360deg)
+    }
+}
+
+.blink {
+    animation: bl 1s steps(1) infinite
+}
+
+@keyframes bl {
+    50% {
+        opacity: 0
+    }
+}
+
+.tape {
+    height: 18px;
+    margin: 8px 0;
+    background: repeating-linear-gradient(45deg, #fc0 0 14px, #000 14px 28px);
+    border: 2px solid #000
+}
+
+.uc {
+    font: bold 22px Impact, sans-serif;
+    color: #f00;
+    text-shadow: 2px 2px 0 #ff0
+}
+
+#layout {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 6px;
+    text-align: left
+}
+
+#layout td {
+    vertical-align: top;
+    background: var(--paper);
+    border: 4px ridge gold;
+    padding: 10px
+}
+
+#side {
+    width: 170px;
+    text-align: center
+}
+
+#side h3 {
+    margin: 8px 0 4px;
+    font: bold 15px Tahoma, sans-serif;
+    color: var(--hot);
+    text-decoration: underline
+}
+
+.btn {
+    display: block;
+    margin: 6px 0;
+    padding: 6px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background: linear-gradient(#fff 0, #9cf 50%, #36c 51%, #69f 100%);
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    box-shadow: 0 2px 3px #000;
+    font: bold 13px Tahoma, Verdana, sans-serif;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer
+}
+
+.btn:hover {
+    background: linear-gradient(#fff 0, #fc9 50%, #f60 51%, #fc6 100%)
+}
+
+.sec {
+    margin-bottom: 18px
+}
+
+.sec h2 {
+    margin: 0 0 8px;
+    padding: 4px 10px;
+    background: linear-gradient(#f66, #900);
+    color: #fff;
+    text-shadow: 2px 2px 0 #000;
+    border: 3px ridge gold;
+    font: normal 24px Impact, "Arial Black", sans-serif;
+    letter-spacing: 2px
+}
+
+.card {
+    margin: 8px 0;
+    padding: 8px 12px;
+    border: 3px dashed var(--hot);
+    background: rgba(255, 255, 255, .18)
+}
+
+.card h4 {
+    margin: 0;
+    font: bold 17px "Trebuchet MS", sans-serif;
+    color: var(--hot);
+    text-shadow: 1px 1px 0 #ff0
+}
+
+.card em {
+    display: block;
+    font-size: 13px
+}
+
+.card ul {
+    margin: 6px 0 0;
+    padding-left: 22px
+}
+
+.cloud {
+    text-align: center;
+    line-height: 1.1
+}
+
+.cloud span {
+    display: inline-block;
+    margin: 2px 7px;
+    font-weight: bold
+}
+
+.c1 {
+    color: #f0f
+}
+
+.c2 {
+    color: #09f
+}
+
+.c3 {
+    color: #f60
+}
+
+.c4 {
+    color: #090
+}
+
+#hits b {
+    display: inline-block;
+    background: #000;
+    color: #0f0;
+    font: bold 18px "Courier New", monospace;
+    padding: 2px 5px;
+    margin: 1px;
+    border: 2px inset #666
+}
+
+#cd {
+    font: bold 26px Impact, sans-serif;
+    color: #f00;
+    text-shadow: 2px 2px 0 #ff0
+}
+
+input,
+textarea {
+    font: 13px Tahoma, sans-serif;
+    border: 2px inset #999;
+    padding: 3px;
+    max-width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    color: #000
+}
+
+.gb {
+    border-bottom: 1px dotted var(--hot);
+    padding: 4px 0;
+    font-size: 13px
+}
+
+.badge {
+    display: inline-block;
+    margin: 3px;
+    padding: 3px 8px;
+    border: 2px outset #ccc;
+    background: #ddd;
+    color: #000;
+    font: bold 11px Verdana, sans-serif
+}
+
+.tc {
+    position: fixed;
+    pointer-events: none;
+    font-size: 18px;
+    z-index: 5;
+    animation: fade .8s forwards
+}
+
+@keyframes fade {
+    to {
+        opacity: 0;
+        transform: translateY(24px) rotate(180deg)
+    }
+}
+
+#pop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .6);
+    z-index: 20;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 12px
+}
+
+#pop div {
+    position: relative;
+    width: 320px;
+    max-width: 100%;
+    min-height: 270px;
+    padding: 16px;
+    background: linear-gradient(#ff0, #f90);
+    border: 6px outset #f00;
+    color: #000;
+    text-align: center;
+    overflow: hidden
+}
+
+#pop h2 {
+    font: normal 26px Impact, sans-serif;
+    margin: 0 0 6px;
+    color: #f00;
+    animation: bl .6s steps(1) infinite
+}
+
+#no {
+    position: absolute;
+    left: 12px;
+    bottom: 10px
+}
+
+@media (max-width:640px) {
+
+    #layout,
+    #layout tbody,
+    #layout tr,
+    #layout td {
+        display: block;
+        width: auto
+    }
+
+    #layout td {
+        margin-bottom: 6px
+    }
+
+    h1 {
+        font-size: 32px
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+
+    body,
+    h1,
+    .blink {
+        animation: none
+    }
+}
